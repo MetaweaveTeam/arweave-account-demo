@@ -8,7 +8,7 @@ function Profile({walletAddr}: {walletAddr: string}) {
   useEffect(() => {
     (async () => {
       const account = new Account();
-      const a = await account.find("Mitchell13#WL65Eg");
+      const a = await account.get(walletAddr);
       if(a?.profile) setUserProfile(a.profile);
     })();
   }, [walletAddr]);
